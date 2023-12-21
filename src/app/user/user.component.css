@@ -1,0 +1,83 @@
+
+#succssed{
+    animation: example 4s infinite;
+    font-size: 55px; 
+     color: rgb(233, 233, 233);
+     text-align: center;
+     
+}
+
+@keyframes example {
+    0% {
+        color: red;
+    }
+
+    25% {
+        color: #f05d19
+    }
+
+    50% {
+        color: yellow
+    }
+
+    75% {
+        color: rgb(19, 231, 19)
+    }
+
+}
+body{
+    background-color: black;
+}
+.page-title {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 30px;
+  }
+  .has-error{
+    border-color: brown;
+    }
+    .my-css{
+     align-items: center;
+    margin-top: 2%;
+    }
+    .btn{
+  margin-left: 10%;
+        width: 15vb;
+    border-width: 4px;
+    border-color: brown;
+    color: brown;
+    }
+    .form-control{
+  
+        border-width: 1px;
+  
+  
+  
+    }
+    .p-inputgroup-addon{
+      border-width: 1px;
+  
+  
+  
+    }
+    .p-card-header{
+  
+      margin-left: 10%;
+      /* margin-top: 3%; */
+  
+  
+    }
+    #valid{
+     color: brown;
+  font-size: 11px;
+  
+  
+    }
+  .generalFont{
+  
+    color: brown;
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  
+  
+  }

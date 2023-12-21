@@ -1,0 +1,79 @@
+
+    
+<p-toolbar class="my-toolbar" styleClass="mb-4">
+    
+    <ng-template pTemplate="center">
+        <h1 style="padding-left: 38vw;">Gift raffle</h1>
+        <!-- <h1>{{giftService.reloadGifts$ | async}}</h1>  -->
+    </ng-template>
+    
+</p-toolbar>
+
+<div class="my-css">
+    <p-table #dt [value]="gifts" [rows]="3" [paginator]="true"
+        [globalFilterFields]="['name','category','representative.name','status']" [(selection)]="selectedGifts"
+        [rowHover]="true" dataKey="id" currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+        [showCurrentPageReport]="true">
+       
+        <ng-template pTemplate="header">
+            <tr>
+                <th style="width: 2rem">
+                    <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+                </th>
+                <th pSortableColumn="id">Id <p-sortIcon field="id"></p-sortIcon></th>
+                <th pSortableColumn="name">Name <p-sortIcon field="name"></p-sortIcon></th>
+                <th pSortableColumn="donor">Donor <p-sortIcon field="donor"></p-sortIcon></th>
+                <th pSortableColumn="cost">Cost <p-sortIcon field="cost"></p-sortIcon></th>
+                <th pSortableColumn="description">Description <p-sortIcon field="description"></p-sortIcon></th>
+                <th pSortableColumn="image">Image <p-sortIcon field="image"></p-sortIcon></th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-gift>
+            <tr>
+                <td>
+                    <p-tableCheckbox [value]="gift"></p-tableCheckbox>
+                </td>
+                <td>{{gift.id}}</td>
+                <td>{{gift.name}}</td>
+                <td>{{gift.donor}}</td>
+                <td>{{gift.cost}}</td>
+                <td>{{gift.description}}</td>
+                <td>{{gift.image}}</td>
+                <td>
+                    <button pButton pRipple class="p-button-rounded p-button-success mr-2" (click)="randome(gift)"><i class="pi pi-spin pi-spinner" style="font-size: 2rem ;"></i></button>
+                   
+                </td>
+                <!-- icon="pi pi-spin pi-spinner" -->
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="summary">
+            <div class="flex align-items-center justify-content-between">
+                In total there are {{gifts ? gifts.length : 0 }} gifts.
+            </div>
+        </ng-template>
+    </p-table>
+</div>
+
+<div  ><br>
+    <h1 id="succssed">The Winners</h1>
+    <p-table [value]="winners"  [tableStyle]="{ 'min-width': '50rem' }">
+        <ng-template pTemplate="header">
+            <tr>
+                <th>UserName</th>
+                <th>GiftId</th>
+                <th>GiftName</th>
+                <th>GiftImage</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-x>
+            <tr>
+                <td>{{ x.userName }}</td>
+                <td>{{ x.giftId }}</td>
+                <td>{{ x.giftName }}</td>
+                <td>{{ x.giftImage }}</td>
+            </tr>
+        </ng-template>
+    </p-table>
+
+</div> 
+<p-confirmDialog [style]="{width: '450px'}"></p-confirmDialog>

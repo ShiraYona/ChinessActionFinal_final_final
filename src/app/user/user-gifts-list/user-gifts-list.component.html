@@ -1,0 +1,29 @@
+
+<p style=" color: red;height: 6vh; font-size: 1.5vw;text-align: center;  border-radius: 10px; font-weight: bold ;  background-color:rgb(14, 11, 11);">Hurry there are  {{ countdown }} left until the draw</p>
+<p-carousel [value]="gifts" [numVisible]="4" [numScroll]="4" [circular]="true" [responsiveOptions]="responsiveOptions" [autoplayInterval]="autoplayInterval">
+    <ng-template let-gift pTemplate="item">
+        <div div="tooltip" class="border-1 surface-border border-round m-2 text-center py-5 px-3">
+            <div>
+                <img  [src]="'assets/images/' + gift.image" class="card-image" />
+            </div>
+            <div class="gg">
+                <h4 class="mb-1">{{ gift.name }}</h4>
+                <h6 class="mt-0 mb-3">{{ '$' + gift.cost }}</h6>
+                <div>{{gift.description}}</div>
+                <div class="car-buttons mt-5">
+                    <button  (click)="addToCart(gift)" type="button" class="addToCart" icon="pi pi-shopping-cart">Add to cart</button>
+                </div>
+            </div>
+        </div>
+    </ng-template>
+</p-carousel>
+
+
+
+
+
+
+
+
+
+

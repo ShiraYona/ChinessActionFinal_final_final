@@ -1,0 +1,65 @@
+
+
+<p-dialog [(visible)]="userDialog" [style]="{width: '600px'}" header="user Details" [modal]="true"
+    styleClass="p-fluid">
+   
+       
+        <ng-template pTemplate="content" [formGroup]="frmPayment">
+            <div class="my-css">
+            <div><span [style]="{fontWeight:'bold'}">Card Details</span></div>
+          <br>
+          <div  class="p-inputgroup">
+            <span class="p-inputgroup-addon">
+                <i class="pi pi-user-edit"></i>
+            </span>
+            <input  pInputText  class="form-control" formControlName="username" placeholder="User name" />
+
+        </div>
+        <br>
+          <div  class="p-inputgroup">
+              <span class="p-inputgroup-addon">
+                  <i class="pi pi-ellipsis-h"></i>
+              </span>
+            
+               <input type="password" class="form-control" formControlName="password" pInputText  placeholder="password"
+              [ngClass]="{'has-error': frmPayment.controls['password'].invalid && (frmPayment.controls['password'].dirty || frmPayment.controls['password'].touched)}" />
+          </div>
+          <br>
+          <div  class="p-inputgroup">
+            <span class="p-inputgroup-addon">
+                <i class="pi pi-credit-card"></i>
+            </span>
+            <input  type="text" class="form-control" formControlName="creditCardNumber" pInputText  placeholder=" creditCardNumber"
+            [ngClass]="{'has-error':!frmPayment.controls['creditCardNumber'].valid && frmPayment.controls['creditCardNumber'].touched}" />
+            <br>
+          </div>
+            <div id="valid" *ngIf="frmPayment.controls['creditCardNumber'].invalid&& frmPayment.controls['creditCardNumber'].touched">Invalid card number format (must be 16 digits).</div>    
+            <br>
+
+          <div class="p-inputgroup">
+            <span class="p-inputgroup-addon">
+              <i class="pi pi-calendar"></i>
+            </span>
+            <label for="icondisplay" class="font-bold block mb-2"> </label>
+            <p-calendar [showIcon]="false" inputId="icondisplay"></p-calendar>
+          </div>
+
+          <br>
+         
+          </div>
+          
+          
+            <button pButton pRipple label="Cancel" icon="pi pi-times" class="p-button-text" (click)="hideDialog()"></button>
+            <button pButton pRipple label="Save" [disabled]="frmPayment.invalid" icon="pi pi-check" class="p-button-text" (click)="addUser()"></button>
+            
+          </ng-template>
+
+    
+</p-dialog>
+<h1 id="succssed" *ngIf="flag">your order {{orderId}} created successfully</h1>
+
+
+
+
+
+

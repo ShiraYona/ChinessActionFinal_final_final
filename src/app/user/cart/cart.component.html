@@ -1,0 +1,114 @@
+
+
+<section style="background-color: #d2c9ff; "><p style=" color: red;height: 6vh; font-size: 1.5vw;text-align: center;  font-weight: bold ;  background-color:rgb(14, 11, 11); ;">Hurry there are  {{ countdown }} left until the draw</p>
+
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12">
+                <div class="card card-registration card-registration-2" style="border-radius: 15px;">
+                    <div class="card-body p-0">
+                        <div class="row g-0">
+                            <div class="col-lg-8">
+                                <div class="p-5">
+                                    <div class="d-flex justify-content-between align-items-center mb-5">
+                                        <h1 class="fw-bold mb-0 text-black">Shopping Cart</h1>
+                                        <h6 class="mb-0 text-muted">{{count}} items</h6>
+                                    </div>
+
+
+
+
+                                    <div *ngFor="let i of cart"
+                                        class="row mb-4 d-flex justify-content-between align-items-center">
+                                        <hr class="my-4">
+                                        <div class="col-md-2 col-lg-2 col-xl-2">
+                                            <img [src]="'assets/images/' + i.image" class="img-fluid rounded-3"
+                                                alt="Cotton T-shirt">
+                                        </div>
+                                        <div class="col-md-3 col-lg-3 col-xl-3">
+                                            <h6 class="text-muted">{{i.name}}</h6>
+                                            <img (click)="deleteItem(i)" src="assets/images/Icon (16).svg">
+                                        </div>
+
+                                        <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
+
+                                            <div (click)="QuentityPlus(i)">+</div>
+                                            <div>{{i.quentity}}</div>
+                                            <div (click)="QuentityMinus(i)">-</div>
+                                        </div>
+                                        <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
+                                            <h6 class="mb-0">{{i.cost}}</h6>
+                                        </div>
+                                    </div>
+                                    <div class="pt-5">
+                                        <h6 class="mb-0">
+                                            <a (click)="ContinueShopping()" class="text-body">Back to Catalog</a>
+                                        </h6>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="col-lg-4 bg-grey">
+                                <div class="p-5">
+                                    <h3 class="fw-bold mb-5 mt-2 pt-1">Summary</h3>
+                                    <hr class="my-4">
+
+                                    <div class="d-flex justify-content-between mb-4">
+                                        <h5 class="text-uppercase">items 3</h5>
+                                        <h5>€ 132.00</h5>
+                                    </div>
+
+                                    <h5 class="text-uppercase mb-3">Shipping</h5>
+
+                                    <div class="mb-4 pb-2">
+                                        <select class="select">
+                                            <option value="1">Standard-Delivery- €5.00</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                            <option value="4">Four</option>
+                                        </select>
+                                    </div>
+
+                                    <h5 class="text-uppercase mb-3">Give code</h5>
+
+                                    <div class="mb-5">
+                                        <div class="form-outline">
+                                            <input type="text" id="form3Examplea2"
+                                                class="form-control form-control-lg" />
+                                            <label class="form-label" for="form3Examplea2">Enter your code</label>
+                                        </div>
+                                    </div>
+
+                                    <hr class="my-4">
+
+                                    <div class="d-flex justify-content-between mb-5">
+                                        <h5 class="text-uppercase">Total price</h5>
+                                        <h5 style="font-weight: bold; font-size: 2vw;
+                    ">{{total}}</h5>
+                                    </div>
+                                    <button (click)="placeOrder()" type="button"
+                                        class="btn btn-primary btn-lg btn-block">
+                                        BUY NOW
+                                    </button>
+                                    <br><br>
+                                    <div class="card-body">
+                                        <p><strong>We accept</strong></p>
+                                        <img class="me-2" width="45px" [src]="'assets/images/visa.png'" alt="Visa" />
+                                        <img class="me-2" width="45px" [src]="'assets/images/american.png'"
+                                            alt="American Express" />
+                                        <img class="me-2" width="45px" [src]="'assets/images/cart.png'"
+                                            alt="Mastercard" />
+
+                                    </div>
+
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

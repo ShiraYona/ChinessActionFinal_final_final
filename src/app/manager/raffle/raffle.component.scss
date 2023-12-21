@@ -1,0 +1,26 @@
+#succssed{
+    animation: example 4s infinite;
+    font-size: 55px; 
+     color: rgb(233, 233, 233);
+     text-align: center;
+     
+}
+
+@keyframes example {
+    0% {
+        color: red;
+    }
+
+    25% {
+        color: #f05d19
+    }
+
+    50% {
+        color: yellow
+    }
+
+    75% {
+        color: rgb(19, 231, 19)
+    }
+
+}

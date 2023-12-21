@@ -1,0 +1,154 @@
+.table-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.my-toolbar{
+    height: 150px;
+}
+.my-css{
+    height: calc(100vh - 200px);
+    width: 95vw;
+    overflow: auto;
+    margin-left: auto;
+    margin-right: auto;
+    direction: rtl;
+}
+/* קובץ ה-CSS */
+.gift-card {
+    padding: 20px;
+    background-color: #f2f2f2;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+/* הגדרות צבעים */
+:host ::ng-deep .p-carousel .p-carousel-content .p-carousel-item .card {
+    background-color: #dc2929; /* רקע הכרטיס */
+}
+
+:host ::ng-deep .p-carousel .p-carousel-content .p-carousel-item .card h5.card-title {
+    color: #222867; /* צבע הכותרת */
+}
+
+:host ::ng-deep .p-carousel .p-carousel-content .p-carousel-item .card p.card-text {
+    color: #0f0808; /* צבע הטקסט */
+}
+
+:host ::ng-deep .p-carousel .p-carousel-content .p-carousel-item .card p.card-text.card-cost,
+:host ::ng-deep .p-carousel .p-carousel-content .p-carousel-item .card p.card-text.card-name {
+    font-weight: bold; /* עיצוב המחיר והשם */
+    margin-top: 8px;
+    text-align: center;
+}
+
+/* הגדרות עיצוב */
+:host ::ng-deep .p-carousel .p-carousel-content .p-carousel-item .card {
+    border-radius: 50%; /* העיגול של הכרטיס */
+    box-shadow: 0 2px 4px rgba(32, 122, 16, 0.1); /* הצללית */
+    padding: 16px; /* הרווח בתוך הכרטיס */
+}
+
+
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .card {
+    width: 300px;
+    margin: 1rem;
+    padding: 1rem;
+    border: 1px solid #dee2e6;
+    border-radius: 0.25rem;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .card-image {
+    width: 100%;
+    height: auto;
+    max-height: 200px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+  }
+  
+  .card-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+  }
+  
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    
+  }
+  
+  .card-id,
+  .card-donor {
+    font-size: 0.8rem;
+  }
+  
+  .card-name {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  
+  .card-price {
+    margin-bottom: 1rem;
+  }
+  
+  .card-button {
+    padding: 0.5rem 1rem;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+  }
+  
+  .card-button1 {
+    padding: 0.5rem 1rem;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    margin-left: 100px;
+  }
+  
+  .card-image {
+    height: 200px; /* Set a fixed height for the images */
+    object-fit: cover; /* Ensure the images maintain their aspect ratio */
+  } 
+  
+  .card-button:hover {
+    padding: 0.5rem 1rem;
+    background-color:red;
+    color: #fff;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+  }
+  .addToCart{
+    width: 10vw;
+    color: #dee2e6;
+    background-color: rgb(63, 63, 62) !important;
+    /* transition: transform 1s ; */
+  }
+  .addToCart:hover{
+    /* transform: rotate(180deg); */
+    border:0.2vw;
+    border-style: solid;
+    border-color: rgb(45, 159, 165);
+opacity: 50%;
+  }
+  

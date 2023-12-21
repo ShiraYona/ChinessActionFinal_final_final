@@ -1,0 +1,67 @@
+<p-toolbar class="my-toolbar" styleClass="mb-4">
+    <ng-template pTemplate="left">
+        <button pButton pRipple label="New" icon="pi pi-plus" class="p-button-success mr-2"
+            (click)="openNew()"></button>
+        <!-- <button pButton pRipple [label]="Delete" icon="pi pi-chart-pie" class="p-button-danger"
+            (click)="deleteSelectedGifts()" [disabled]="!selectedGifts || !selectedGifts.length"></button> -->
+    </ng-template>
+    <ng-template pTemplate="center">
+        <h1>ChinessAction</h1>
+        <!-- <h1>{{giftService.reloadDonors$ | async}}</h1>  -->
+    </ng-template>
+    <ng-template pTemplate="right">
+        <button pButton pRipple label="Export" icon="pi pi-upload" class="p-button-help"></button>
+    </ng-template>
+</p-toolbar>
+<div class="my-css">
+    <p-table #dt [value]="donors" [rows]="5" [paginator]="true"
+        [globalFilterFields]="['name','category','representative.name','status']" [(selection)]="selectedDonor"
+        [rowHover]="true" dataKey="id" currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+        [showCurrentPageReport]="true">
+        <ng-template pTemplate="caption">
+            <div class="flex align-items-center justify-content-between">
+                <h5 class="m-0">Manage Donors</h5>
+                <span class="p-input-icon-left">
+                    <i class="pi pi-search"></i>
+                    <!-- <input pInputText type="text" (input)="dt.filterGlobal($event.target.value, 'contains')"
+                        placeholder="Search..." /> -->
+                </span>
+            </div>
+        </ng-template>
+        <ng-template pTemplate="header">
+            <tr>
+                <th style="width: 2rem">
+                    <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+                </th>
+                <th pSortableColumn="id">Id <p-sortIcon field="id"></p-sortIcon></th>
+                <th pSortableColumn="name">Name <p-sortIcon field="name"></p-sortIcon></th>
+                <th pSortableColumn="email">Email <p-sortIcon field="email"></p-sortIcon></th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-donor>
+            <tr>
+                <td>
+                    <p-tableCheckbox [value]="donor"></p-tableCheckbox>
+                </td>
+                <td>{{donor.id}}</td>
+                <td>{{donor.name}}</td>
+                <td>{{donor.email}}</td>
+               
+                <td>
+                    <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success mr-2"
+                        (click)="editDonor(donor)"></button>
+                    <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-warning"
+                        (click)="deleteDonor(donor)"></button>
+                </td>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="summary">
+            <div class="flex align-items-center justify-content-between">
+                In total there are {{donors ? donors.length : 0 }} donors.
+            </div>
+        </ng-template>
+    </p-table>
+</div>
+<p-confirmDialog [style]="{width: '450px'}"></p-confirmDialog>
+
+<app-donor-edit [donorId]="donor.id" [(donorDialog)]="donorDialog"></app-donor-edit>
